@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="1、安装Aria2   1sudo apt-get install aria2  创建目录1mkdir /etc/aria2 添加配置文件1sudo vi /etc/aria2/aria2.config     将以下内容写入config文件中 12345678910111213141516171819202122232425262728293031323334353637383940414243">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/18/树莓派搭建frp+Aria2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、安装Aria2   1sudo apt-get install aria2  创建目录1mkdir /etc/aria2 添加配置文件1sudo vi /etc/aria2/aria2.config     将以下内容写入config文件中 12345678910111213141516171819202122232425262728293031323334353637383940414243">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-04T07:00:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="1、安装Aria2   1sudo apt-get install aria2  创建目录1mkdir /etc/aria2 添加配置文件1sudo vi /etc/aria2/aria2.config     将以下内容写入config文件中 12345678910111213141516171819202122232425262728293031323334353637383940414243">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/18/树莓派搭建frp+Aria2/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -168,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -320,9 +323,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -355,9 +358,7 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/18/树莓派搭建frp+Aria2/" class="post-title-link" itemprop="url">Unbenannt</a>
+
               
             
           </h1>
@@ -433,9 +434,7 @@
       
 
       
-        
-          
-            <h1>1、安装Aria2</h1>
+        <h1>1、安装Aria2</h1>
 
 <hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install aria2</span><br></pre></td></tr></table></figure>
@@ -469,8 +468,6 @@ WantedBy=multi-user.target
 <p>打开文件夹，编辑frpc.ini文件<br><code>vi frpc.ini</code><br><br>输入以下内容(服务器地址、端口、token改为你自己的)<br></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = your_server_addr</span><br><span class="line">server_port = your_server_port</span><br><span class="line">privilege_token = your_token</span><br><span class="line">login_fail_exit = false</span><br><span class="line"></span><br><span class="line">#将远程端口10086转发至本地端口6800</span><br><span class="line">[aria2]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">#本地端口</span><br><span class="line">local_port = 6800</span><br><span class="line">#远程端口</span><br><span class="line">remote_port = 10086</span><br><span class="line"></span><br><span class="line">#访问your_url*****.com</span><br><span class="line">#将会转至127.0.0.1:6800</span><br><span class="line">[aria]</span><br><span class="line">type = http</span><br><span class="line">local_port = 6800</span><br><span class="line">cusom_domains = your_url*****.com</span><br></pre></td></tr></table></figure>
 </h4></h4>
-          
-        
       
     </div>
 
@@ -493,159 +490,28 @@ WantedBy=multi-user.target
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zbl">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2019/05/18/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-05-18 09:04:55" itemprop="dateCreated datePublished" datetime="2019-05-18T09:04:55+08:00">2019-05-18</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -655,14 +521,15 @@ WantedBy=multi-user.target
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -682,8 +549,17 @@ WantedBy=multi-user.target
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -729,6 +605,31 @@ WantedBy=multi-user.target
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1、安装Aria2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2.设置aria2服务和开机启动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">    进行到这里，你就可以在局域网内访问到你的aria2下载器了，但是要想在外网访问的话， 需要进行内网穿透。这里推荐使用frp工具 以上部分参考博客： https://blog.csdn.net/kxwinxp/article/details/80288006作者：宁静致远kioye来源：CSDN3、安装并配置frp首先下载相应的frp版本,解压.gz文件服务器端打开文件夹，编辑frps.ini文件vi frps.ini输入以下内容(端口、用户、密码和token自己按实际情况修改，地址默认监听0.0.0.0)12345678910111213141516171819[common]#监听的地址#bind_addr = 0.0.0.0#绑定的端口号 对应客户端的server_port端口bind_port = 10000#http和https服务的端口号vhost_http_port = 8000vhost_https_port = 443#frp后台管理#frp后台管理的端口、用户、密码dashboard_port = 8000dashboard_user = admindashboard_pwd = admin#token值，与客户端对应privilege_token =your_token前台启动frp服务端./frps -c ./frps.ini后台启动frp服务端nohup ./frps -c ./frps.ini &amp;客户端
+
+打开文件夹，编辑frpc.ini文件vi frpc.ini输入以下内容(服务器地址、端口、token改为你自己的)
+123456789101112131415161718192021[common]server_addr = your_server_addrserver_port = your_server_portprivilege_token = your_tokenlogin_fail_exit = false#将远程端口10086转发至本地端口6800[aria2]type = tcplocal_ip = 127.0.0.1#本地端口local_port = 6800#远程端口remote_port = 10086#访问your_url*****.com#将会转至127.0.0.1:6800[aria]type = httplocal_port = 6800cusom_domains = your_url*****.com
+</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.0.2.</span> <span class="nav-text"> 以上部分参考博客： https://blog.csdn.net/kxwinxp/article/details/80288006作者：宁静致远kioye来源：CSDN3、安装并配置frp首先下载相应的frp版本,解压.gz文件服务器端打开文件夹，编辑frps.ini文件vi frps.ini输入以下内容(端口、用户、密码和token自己按实际情况修改，地址默认监听0.0.0.0)12345678910111213141516171819[common]#监听的地址#bind_addr = 0.0.0.0#绑定的端口号 对应客户端的server_port端口bind_port = 10000#http和https服务的端口号vhost_http_port = 8000vhost_https_port = 443#frp后台管理#frp后台管理的端口、用户、密码dashboard_port = 8000dashboard_user = admindashboard_pwd = admin#token值，与客户端对应privilege_token =your_token前台启动frp服务端./frps -c ./frps.ini后台启动frp服务端nohup ./frps -c ./frps.ini &amp;客户端
+
+打开文件夹，编辑frpc.ini文件vi frpc.ini输入以下内容(服务器地址、端口、token改为你自己的)
+123456789101112131415161718192021[common]server_addr = your_server_addrserver_port = your_server_portprivilege_token = your_tokenlogin_fail_exit = false#将远程端口10086转发至本地端口6800[aria2]type = tcplocal_ip = 127.0.0.1#本地端口local_port = 6800#远程端口remote_port = 10086#访问your_url*****.com#将会转至127.0.0.1:6800[aria]type = httplocal_port = 6800cusom_domains = your_url*****.com
+</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3、安装并配置frp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">服务器端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">客户端</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -859,6 +760,10 @@ WantedBy=multi-user.target
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -874,6 +779,8 @@ WantedBy=multi-user.target
 
   
 
+
+  
 
 
   
